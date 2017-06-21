@@ -5,15 +5,47 @@
   
     <h1>Tasks</h1>
 
-    <h2>Content</h2>
-      <% @tasks.each do |task| %>
-        <%= task.content %>
-        <%= link_to 'Show', task %>
-        <%= link_to 'Edit', edit_task_path(task) %>
-        <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="col l4 12">
+      <h2>Open</h2>
+      <% @open.each do |task| %>
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <%= task.content %>
+            <%= link_to 'Show', task %>
+            <%= link_to 'Edit', edit_task_path(task) %>
+            <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
       <% end %>
+    </div>
+    
+    <div class="col l4 12">
+      <h2>WIP</h2>
+      <% @wip.each do |task| %>
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <%= task.content %>
+            <%= link_to 'Show', task %>
+            <%= link_to 'Edit', edit_task_path(task) %>
+            <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
-    <br>
+    <div class="col l4 12">
+      <h2>Closed</h2>
+      <% @closed.each do |task| %>
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <%= task.content %>
+            <%= link_to 'Show', task %>
+            <%= link_to 'Edit', edit_task_path(task) %>
+            <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
   </div>
 
